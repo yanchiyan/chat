@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Roboto Font -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+
+  <!-- jQuery -->
+  <script src="jquery.js"></script>
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+  <!-- Custom -->
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="main.css">
+
+</end>
+<body>
+  <div class="mdl-grid">
+
+  <!-- SIGNIN/UP MARKUP -->
+  <div class="mdl-card mdl-shadow--2dp hover-shadow">
+    <div class="mdl-card__title mdl-color-text--white">
+      <h2 class="mdl-card__title-text">Sign In</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <!-- Sign/In/Out Form -->
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="email">
+          <label class="mdl-textfield__label" for="email">E-mail</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="password" id="password">
+          <label class="mdl-textfield__label" for="password">Password</label>
+        </div>
+      </form>
+
+      <!-- SignIn/SignOut Button -->
+      <button class="mdl-button mdl-js-button mdl-button--raised" id="btnSignIn">Sign In</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised" id="btnSignUp">Sign Up</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised" id ="btnSignOut">Sign Out</button>
+
+      <!-- Sign Information -->
+      <div class="mdl-card__supporting-text" id="sign-info">No one login...</div>
+    </div>
+  </div><!-- mdl-card -->
+
+  <!-- PROFILE Update MARKUP -->
+  <div class="mdl-card mdl-shadow--2dp hover-shadow">
+    <div class="mdl-card__title mdl-color-text--white">
+      <h2 class="mdl-card__title-text">User Info Update</h2>
+    </div>
+
+    <div class="mdl-card__supporting-text">
+      <!-- User Info Form -->
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text"  id="userName">
+          <label class="mdl-textfield__label" for="sample1">User Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text"  id="userAge">
+          <label class="mdl-textfield__label" for="sample1">Age</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text"  id="userOccupation">
+          <label class="mdl-textfield__label" for="sample1">Occupation</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text"  id="userDescriptions">
+          <label class="mdl-textfield__label" for="sample1">Descriptions</label>
+        </div>
+      </form>
+      <div class="mdl-textfield mdl-js-textfield">
+        <h6>Your photo: </h6>
+        <input type="file" id="file" name="file"/>
+      </div>
+
+      <!-- SignIn/SignUp/Logout Button -->
+      <button class="mdl-button mdl-js-button mdl-button--raised" id="btnSubmit">Submit</button>
+    </div>
+  </div>
+
+  <!-- Profile MARKUP -->
+  <div class="mdl-card mdl-shadow--2dp hover-shadow">
+    <div class="mdl-card__title mdl-color-text--white">
+      <h2 class="mdl-card__title-text">Profile</h2>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-card__supporting-text" id="user-pic">
+        <img src="" class="demo-avatar">
+      </div>
+      <div class="mdl-card__supporting-text" id="user-info">
+        <ul id='example-messages' class="example-chat-messages">
+          <li><strong>Name</strong>: <span id="profile-name"></span></li>
+          <li><strong>Email</strong>: <span id="profile-email"></span></li>
+          <li><strong>Age</strong>: <span id="profile-age"></span></li>
+          <li><strong>Occupation</strong>: <span id="profile-occupation"></span></li>
+          <li><strong>Descriptions</strong>: <span id="profile-descriptions"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT MARKUP -->
+  <div class="mdl-card mdl-shadow--2dp hover-shadow">
+    <div class="mdl-card__title mdl-color-text--white">
+      <h2 class="mdl-card__title-text">Firebase Chat Demo</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <!--<div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="nameInput" placeholder="Enter a username ...">
+      </div>-->
+      <ul id='messages' class="example-chat-messages"></ul>
+
+      <footer>
+        <div class="mdl-layout__content mdl-color--grey-100">
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="messageInput" name="email" placeholder="Type a message ..."/>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
